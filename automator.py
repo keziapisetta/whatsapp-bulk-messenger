@@ -35,7 +35,7 @@ def send_messages(driver, numbers, message):
 				if not sent:
 					driver.get(url)
 					try:
-						click_btn = WebDriverWait(driver, DELAY).until(EC.element_to_be_clickable((By.XPATH, "//button[@aria-label='Send']")))
+						click_btn = WebDriverWait(driver, DELAY).until(EC.element_to_be_clickable((By.XPATH, "//span[@data-icon='wds-ic-send-filled']")))
 					except Exception as e:
 						print(f"\nFailed to send message to: {number}, retry ({i+1}/3)")
 						print("Make sure your phone and computer is connected to the internet.")
